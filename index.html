@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment gate way</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        input{
+            width: 40%;
+            text-align: center;
+            margin-left: 30%;
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .products{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .product{
+            width: 200px;
+            padding: 20px;
+            height: 100px;
+            margin: 20px;
+            border: 2px solid black;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Details..</h1>
+    <input type="search" placeholder="search.." onkeyup="onChange(event)">
+    <div class="products">
+        <div class="product">
+            <p>white</p>
+        </div>
+        <div class="product">
+            <p>black</p>
+        </div>
+        <div class="product">
+            <p>blue</p>
+        </div>
+        <div class="product">
+            <p>pink</p>
+        </div>
+        <div class="product">
+            <p>green</p>
+        </div>
+        <div class="product">
+            <p>yellow</p>
+        </div>
+        <div class="product">
+            <p>purple</p>
+        </div>
+        <div class="product">
+            <p>orange</p>
+        </div>
+        <div class="product">
+            <p>red</p>
+        </div>
+        <div class="product">
+            <p>shyblue</p>
+        </div>
+        <div class="product">
+            <p>broun</p>
+        </div>
+        <div class="product">
+            <p>teal</p>
+        </div>
+        <div class="product">
+            <p>lightgreen</p>
+        </div>
+        <div class="product">
+            <p>darkred</p>
+        </div>
+        <div class="product">
+            <p>darkgreen</p>
+        </div>
+        <div class="product">
+            <p>darkblue</p>
+        </div>
+    </div>
+</body>
+<script>
+    var getin = "";
+    var product = document.querySelectorAll(".product");
+    function onChange(event){
+        getin = event.target.value.toUpperCase();
+        for (var i = 0; i < product.length; i++) {
+            var productName = product[i].querySelector("p").textContent;
+            if (productName.toUpperCase().startsWith(getin)) {
+                product[i].style.display = "block";
+            }
+            else {
+                product[i].style.display = "none";
+            }
+        }
+    }
+</script>
+</html>
